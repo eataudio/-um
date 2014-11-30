@@ -2,8 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>welcome to my ~ page</title> <link rel="stylesheet"
-                                              type="text/css" href="default.css" media="screen" />
+    <title>welcome to my ~ page</title> 
+    <link rel="stylesheet"
+          type="text/css"
+          href="default.css"
+          media="screen" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="random_townie.js"></script>    
   </head>
   <body>
     <table class="temp_nav">
@@ -14,9 +20,9 @@
         <td><a href="http://tilde.town/~um/on_~.html">on ~</a></td>
         <td><a href="http://tilde.town/~um/other_tildes.html">other ~ sites</a></td>
         <td><a href="http://tilde.town/~um/orphans.html">orphans</a></td>
+        <td><a href="learning_log/how_i_managed_to_cURL_a_file_with_cron.html">learning log</a></td>
       </tr>
     </table>
-
 
     <img src="http://indescriptum.net/indescriptum-tetrahedron.png" style="width:100px; heigh:100px">
     <h1>~Um</h1>
@@ -44,7 +50,6 @@
       poetics, and collaboration
       &mdash;&mdash; <a href="http://books.google.com/books?id=GBu-Mvg1-FkC&pg=PA147&lpg=PA147&dq=schlegel+symphilosophy&source=bl&ots=fMoMU1wQVG&sig=rYPngzT2Vu1cZg4Uamb8vBf0sE0&hl=en&sa=X&ei=uwBsVKfHHKbgsASJpYE4&ved=0CC0Q6AEwAg#v=onepage&q=schlegel%20symphilosophy&f=false">symphilosophy</a>.</p>
 
-
     <blockquote>
       <p>The human heart is distended until it is as big as all outdoors.</p>
       <p>[...] there are uncharted moral wastes over which only our dim
@@ -53,7 +58,29 @@
     </blockquote>
     <p><a href="https://twitter.com/shon_feder">@shon_feder</a></p>
 
+    <div id="tildetown_ring">
+      <p><a id="random_user" href="" onclick="tilde_ring()"></a> </p>
+        <!-- <li><a id="random_tildebox" href="" onclick="tilde_ring()">random tilde box</a> </li> -->
+      
+      <div>
+        <!-- <iframe id="usersJSON" -->
+        <!--         src= -->
+        <!--         style="display: none;" -->
+        <!--         onload="tilde_ring()"> -->
+        <!-- </iframe> -->
+      </div>
+      <!-- <div> -->
+      <!--   <iframe id="tildesJSON" -->
+      <!--           src="http://tilde.club/~pfhawkins/othertildes.json" -->
+      <!--           style="display: none;" -->
+      <!--           onload="tilde_ring()"> -->
+      <!--   </iframe> -->
+      <!-- </div> -->
+
+    </div>
+
   </body>
+  
 </html>
 
 

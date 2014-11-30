@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>How I Managed to cURL a File with cron</title> 
+    <link rel="stylesheet"
+          type="text/css"
+          href="http://tilde.town/~um/default.css"
+          media="screen" />
+    <style>code{font-size:80%}</style>
+  </head>
+  <body>
+    <h1 id="howimanagedtocurlafilewithcron">How I Managed to cURL a File with cron</h1>
+
+    <ul>
+      <li><strong>The problem:</strong> I want data from a remote file accessible to local processes.</li>
+      <li><strong>The solution:</strong> Copy the remote file to the desired local directory.</li>
+      <li><strong>The improvement:</strong> Refresh the file daily so the data stays current.</li>
+      <li><strong>The tools:</strong> The UNIX tools cURL, for fetching the file, and cron, for scheduling recurring tasks.</li>
+      <li><a href="#thesolution">The Solution</a></li>
+    </ul>
+
+    <p>Herein, I recount how I managed to accomplish the simple task
+      of setting up a recurring process to copy a file from a remote server.
+      It does not offer any sort of overview on the tools I used. But the reader can
+      consult information about <a href="http://en.wikipedia.org/wiki/Cron">cron</a> and <a href="http://en.wikipedia.org/wiki/CURL">cURL</a>.
+      This document merely notes the resources I consulted in learning
+      how to accomplish the task and the concrete steps I took to implement
+      the solution. My hope is that, if someone faced the exact same problem
+      as I did, they would be able to simply follow the steps I outline in the
+      final section. Should the reader wish to know more about what is being
+      done, then they can consult the resources listed and/or read my brief
+      notes.</p>
+
+    <h2 id="resourcesiconsulted">Resources I Consulted</h2>
+
+    <ul>
+      <li><a href="http://tilde.town/~datagrok/">~datagrok</a>, <a href="http://tilde.town/~cmr/">~cmr</a>, and <a href="http://tilde.club/~vilmibm/">~vilmibm</a> on tilde.town irc (I am learning that a helpful <a href="http://en.wikipedia.org/wiki/Internet_Relay_Chat">irc</a> community is invaluable)</li>
+      <li><a href="http://www.linux.com/learn/tutorials/420397:scheduling-magic-intro-to-cron-on-linux">Scheduling Magic: Intro to Cron on Linux</a></li>
+      <li>UNIX manual page on crontab (enter <code>man crontab</code> in your <a href="http://en.wikipedia.org/wiki/Terminal_emulator">terminal emulator</a>)</li>
+      <li><a href="http://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/">HowTo: Add Jobs To cron Under Linux or UNIX?</a></li>
+      <li><a href="http://serverfault.com/a/171384">ServerFault Answer</a></li>
+    </ul>
+
+    <h2 id="commandtocopyaremotefile">Command to Copy a Remote File</h2>
+
+    <p>cURL is &#8220;A <a href="http://tilde.town/~shanx/cli.html">command line</a> tool for
+      getting or sending files using URL syntax.&#8221; This tool is accessed
+      from the cli using the <code>curl</code> command. I will also make use of the
+      unix command <code>&gt;</code>, which &#8220;sends the output of an executable to a file
+      instead of putting it on the screen. This is called output
+      redirection&#8221;
+      (<a href="https://www.cs.bu.edu/teaching/unix/reference/commands.html#gt">UNIX Commands</a>).</p>
+
+    <p>The basic syntax of my command, if used at the command line, is as
+      follows:</p>
+
+    <pre><code>curl *[file to copy from]* &gt; *[file to copy to]*
+    </code></pre>
+
+    <p>However, running this command produces additional informaton about the
+      process, which I don&#8217;t to deal with when it&#8217;s run by cron, therefore,
+      following ~cmr&#8217;s advice, I passed the command two
+      <a href="http://www.catb.org/esr/writings/taoup/html/ch10s05.html">flags</a>: one
+      to tell it to keep quite (<code>--silent</code> abbreviated to <code>-s</code>) the other to
+      tell it to speak up if it encounters an error (<code>--show-error</code>
+      abbreviated to <code>-S</code>). When run at the command line, the full command
+      is (using the short forms of the flags in conjunction):</p>
+
+    <pre><code>curl -Ss http://tilde.club/~pfhawkins/othertildes.json &gt; /home/um/public_html/json/othertildes.json
+    </code></pre>
+
+    <h2 id="schedulingthetaskwithcrontab">Scheduling the Task with <code>crontab</code></h2>
+
+    <p>&#8220;Cron a time-based job scheduler in Unix-like computer operating systems.&#8221;
+      Cron lets a schedule specified to process to be run at specified times.
+      This schedule is kept in a users&#8217; crontab file (short for &#8220;cron table&#8221;).
+      <code>crontab</code> is the command used to edit this file.</p>
+
+    <p>To edit the user&#8217;s crontab file, or create a new one if none exists already,
+      use the command</p>
+
+    <pre><code>crontab -e
+    </code></pre>
+
+    <p>The syntax for scheduling cron jobs is dead simple:</p>
+
+    <pre><code>*[time specification]* *[command or script to execute]*
+    </code></pre>
+
+    <p>The time specification can detail the minute, hour, day of month, month of year,
+      and day of the week, but for tasks that don&#8217;t need such precision, we can
+      use <a href="http://en.wikipedia.org/wiki/Cron#Predefined_scheduling_definitions">predefined scheduling definitions</a>.
+      This process should recur daily, so I will use the predefined value <code>@daily</code>.
+      My crontab entry for this task is</p>
+
+    <pre><code>@daily /usr/bin/curl -Ss http://tilde.club/~pfhawkins/othertildes.json &gt; /home/um/public_html/json/othertildes.json
+    </code></pre>
+
+    <p>Note, after <code>/usr/bin/curl</code>, this is identical to the cli command
+      given above. However, when scheduling tasks for cron, apparently
+      we use the full path to the executable instead of the shorthand
+      command. Thus, we substitute <code>/usr/bin/curl</code> for <code>curl</code>.</p>
+
+    <h2 id="thesolution">The Solution</h2>
+
+    <p>The learning took awhile, but the doing was very simple. Here are
+      all of the concrete steps needed to accomplish this task. Commands
+      entered into the terminal look like <code>this</code>:</p>
+
+    <ul>
+      <li>open terminal</li>
+      <li><code>cd ~</code></li>
+      <li><code>crontab -e</code> (this should open the crontab file in your default editer)</li>
+      <li>below the existing content, I added this on a new line:
+        <pre><code>@daily /usr/bin/curl -Ss http://tilde.club/~pfhawkins/othertildes.json &gt; /home/um/public_html/json/othertildes.json</code></pre></li>
+      <li>save and close the file</li>
+    </ul>
+  </body>
+</html>

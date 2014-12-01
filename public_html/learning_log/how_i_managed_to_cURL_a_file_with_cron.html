@@ -105,16 +105,16 @@
     <h2 id="thesolution">The Solution</h2>
 
     <p>The learning took awhile, but the doing was very simple. Here are
-      all of the concrete steps needed to accomplish this task. Commands
-      entered into the terminal look like <code>this</code>:</p>
+      all of the concrete steps needed to accomplish this task. (Commands
+      entered into the terminal look like this: <code>$ command args</code>):</p>
 
     <ul>
-      <li>open terminal</li>
-      <li><code>cd ~</code></li>
-      <li><code>crontab -e</code> (this should open the crontab file in your default editer)</li>
-      <li>below the existing content, I added this on a new line:
+      <li>I opened terminal</li>
+      <li><code>$ cd ~</code> (changed into my home directory--not sure if necessary)</li> 
+      <li><code>$ crontab -e</code> (opened my crontab file in the default editer)</li>
+      <li>In the crontab file, below the existing content, I added this on a new line:
         <pre><code>@daily /usr/bin/curl -Ss http://tilde.club/~pfhawkins/othertildes.json &gt; /home/um/public_html/json/othertildes.json</code></pre></li>
-      <li>save and close the file</li>
+      <li>I saved and closed the file.</li>
     </ul>
   </body>
 </html>

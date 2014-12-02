@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>todos &nbsp; tadas</title> <link rel="stylesheet"
+    type="text/css" href="default.css" media="screen" />
+  </head>
+  <body>
+    <table class="temp_nav">
+      <tr>
+        <td><a href="http://tilde.club/%7Epfhawkins/othertildes.html">*</a>/~<a href="http://tilde.town/~sanqui/tildeverse_users.txt">*</a></td>
+        <td><a href="http://tilde.town/">tilde.town</a></td>
+        <td><a href="http://tilde.town/~um/">~um</a></td>
+        <td><a href="http://tilde.town/~um/on_~.html">on ~</a></td>
+        <td><a href="http://tilde.town/~um/other_tildes.html">other ~
+        sites</a></td>
+        <td><a href="http://tilde.town/~um/orphans.html">orphans</a></td>
+        <td><a href="learning_log/how_i_managed_to_cURL_a_file_with_cron.html">learning
+        log</a></td>
+      </tr>
+    </table>
+<div class="content">
+<p><em>(This mess will be cleaned up before long.)</em></p>
+
+<h2>DaDas</h2>
+
+<blockquote>
+  <p>Each thing has its word, but the word has become a thing by
+  itself. Why shouldn't I find it? Why can't a tree be called
+  Pluplusch, and Pluplubasch when it has been raining? The word, the
+  word, the word outside your domain, your stuffiness, this laughable
+  impotence, your stupendous smugness, outside all the parrotry of
+  your self-evident limitedness. The word, gentlemen, is a public
+  concern of the first importance. (Hugo
+  Ball, <em><a href="http://en.wikisource.org/wiki/Dada_Manifesto_(1916,_Hugo_Ball)">Dada
+  Manifesto</a></em>)
+  </p>
+</blockquote>
+
+<h2>TaDas</h2>
+  <h3>Initial draft of Html & JavaScript for a tilde.town web
+  ring.</h3>
+    <p><a href="http://tilde.town/~nick">~nick</a> already has
+      <a href="http://tilde.town/~nick/explore.html">an
+      implementation</a> of a random link generator for tilde.town
+      users. It is in vanilla JavaScript and certain to be more
+      efficient and employ better practices than my own.  You should
+      probably use this instead.
+    </p>
+    <p>My implementation generates a random link to a tilde.town user
+      and a random link to another tilde box. You can see an example
+      of its operation at the bottom of my <a href="/~um">home
+      page</a>. The code is available on github (and in my public_html
+      directory): </p>
+    <ul>
+      <li><a href="https://github.com/aBathologist/-um/blob/master/public_html/tilde_ring.html">the
+      html</a></li>
+      <li><a href="https://github.com/aBathologist/-um/blob/master/public_html/js/tilde_ring.js">the
+      javascript</a></li>
+    </ul>
+    <p>If you want this on your page, it should suffice to drop the
+      html wherever you'd like it. Forks and pulls are welcome, as is
+      any manner of criticism on the code or approach. The thing
+      relies on data generated
+      by <a href="http://tilde.town/~dan">~dan</a> and
+      <a href="http://tilde.club/~pfhawkins/">~pfhawkins</a>.
+      <a href="http://tilde.town/~datagrok">~datagrock</a>,
+      <a href="http://tilde.town/~vilmibm">vilmibm</a> and others on
+      irc were a tremendous help.</p>
+    <p>My bit of code generates a link to a tilde.town user and a
+      random link to another tilde box.  It is a flawed implementation
+      and very bare-bones. Here is a list of its shortcomings:
+      <ul>
+        <li>It links jQuery. It links through the Google CDN so, I've
+          been given to understand, it's probably already cached by
+          browsers. But it should be reduced to vanilla
+          JavaScript</li>
+        <li>It consists of two text links: no graphics no
+        nothing.</li>
+        <li>It creates random links to tilde.town users. It's not
+          ring-like since there's no opt-in and, as of now, only one
+          other page has a similar gadget on their page,
+          <a href="http://tilde.town/~nick">~nick</a>. (as <a href="http://tilde.town/~dan">~dan</a>
+          pointed on irc).</li>
+        <li>I hope this will eventually be a universal html widget
+          that can be dropped into a ~users page on any known box in
+          the tildeverse, and it will generate links to their
+          neighbors and to other boxes. It doesn't do this yet. ~dan
+          and I have been talking.</li></ul>
+    </p>
+  
+
+<h2>ToDos</h2>
+<ol>
+  <li>Figure out a way to manage my site.</li>
+  <li> <blockquote>
+      <p>If you are young and new to Linux and looking for an
+        assignment &#8230; go find every programming language on this
+        system and learn about each one of them. &#8230; Maybe write a
+        one-line description of each language. &#8230; For extra
+        credit, don&#8217;t write anything&#8212;but use the
+        system&#8217;s own information to write it for
+        you. (<a href="http://tilde.club/~ford/">~ford</a>, October
+        24, 2014).</p>
+  </blockquote></li>
+<li>Lamentations section</li>
+      <li>Implement site structure:
+        <ul>
+          <li>Decentered, tightly linked, essays and aphorisms, bound
+          by tags, and relations of terms.</li>
+          <li>Key terms (called "concepts") given canonical
+          definitions, which are visible on mouse hovering over term
+          (or, better, in a specified area of the page, more suitable
+          for mouse navigation.)</li>
+          <li>to "bring grateful release form the constraint of linear
+          exposition. Cross-references abound, but they refer forward
+          and backward indiscriminately" (Quine, <em>Quiddities</em>,
+          Preface).</li>
+        </ul>
+      </li>
+
+  <li>Linkify tilde names: a utility that monitors &#8216;~*&#8217;
+  patterns, and links to the ~user within the relevant
+  collective. (Just like the twitter &#8216;@&#8217; and Reddit
+  &#8216;/u/&#8217;).
+
+    <ul>
+      <li>Is this a bad idea? Being a little utility, users&#8217;
+        could choose to run the script or not.</li>
+      <li>Would mimicking this feature of social networks mean
+        capitulating to the pressure to become on?</li>
+  </ul></li>
+  <li>Tilde report: scrape pages on tilde servers, extract sentences
+    with &#8216;~&#8217; or &#8216;tilde&#8217;, post to a stream of
+    updates linking to the source.
+    <ul>
+      <li>Is this just the stream of data scrolling into oblivion,
+        eloquently described by
+        (<a href="http://tilde.town/~datagrok/">~datagrok</a>)?</li>
+      <li><a href="https://twitter.com/tilde_fortune">@tilde_fortune</a>
+        is doing approximately this, but with apparently any
+        sentences, posted to twitter. (Also, tilde_fortune appears to
+        post text taken from any time, even after the page might have
+        changed.)</li>
+  </ul></li>
+  <li>Recommended cultural capital: (books, music, art, etc)</li>
+  <li>Recommended techno capital</li>
+  <li>"tilde.town connsonance": scan user pages for sentences
+    containing n words in common, or in a row: juxtapose (probably a
+    Prolog project)</li>
+  <li>"tilde.town dissonance": scan user pages for <em>x</em>
+    and <em>is not x</em> or other negation of <em>x</em>: juxtapose.
+</ol>
+<div>
+</body>
+</html>
+
+
+

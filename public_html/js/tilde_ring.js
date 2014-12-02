@@ -34,7 +34,6 @@ function link_random_user() {
 
             random_user = random_item(urls);
         
-        $('#random_user').text("Visit a Random " + window.location.hostname + " ~user");
         $('#random_user').attr('href', random_user);
     });
 }

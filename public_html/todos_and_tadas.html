@@ -38,19 +38,27 @@
 </blockquote>
 
 <h2>TaDas</h2>
-  <h3>Initial draft of Html & JavaScript for a tilde.town web
-  ring.</h3>
-    <p><a href="http://tilde.town/~nick">~nick</a> already has
-      <a href="http://tilde.town/~nick/explore.html">an
-      implementation</a> of a random link generator for tilde.town
-      users. It is in vanilla JavaScript and certain to be more
-      efficient and employ better practices than my own.  You should
-      probably use this instead.
+  <h3>Working draft of Html & JavaScript for a tilde.town tilde-ring.</h3>
+    <p>At this moment, it consists in an Html div and an external JavaScript file
+      which, together, provide three links:
+      <ol>
+          <li>One to a randomly selected member of the tilde.town web
+          ring. A members is anyone who has the tilde.town ring html in their index.html.</li>
+          <li>One to a randomly selected tilde.town user, excluding
+          any who haven't yet edited their pages.</li>
+          <li>One to a randomly generated tilde.box.</li>
+      </ol>
+      I'm inclined towards removing 2 and 3, replacing
+      them with a "join" link, and trying to move 2 and 3 to the front
+      page of tilde.town instead. I'm referring to it as a tilde-ring
+      because, the tildeverse is something different than the web,
+      even if this only generates links to web sites (at the moment).
     </p>
-    <p>My implementation generates a random link to a tilde.town user
-      and a random link to another tilde box. You can see an example
-      of its operation at the bottom of my <a href="/~um">home
-      page</a>. The code is available on github (and in my public_html
+    <p>The code is still in a somewhat rough state. However, you can
+      see it at work on my <a href="/~um">home
+      page</a>. I can't decide how I should format it or display it. At
+      the moment, it is left unstyled and without images so you can
+      customize it to suit your preferences. The code is available on github (and in my public_html
       directory): </p>
     <ul>
       <li><a href="https://github.com/aBathologist/-um/blob/master/public_html/tilde_ring.html">the
@@ -65,35 +73,35 @@
       by <a href="http://tilde.town/~dan">~dan</a> and
       <a href="http://tilde.club/~pfhawkins/">~pfhawkins</a>.
       <a href="http://tilde.town/~datagrok">~datagrock</a>,
+      <a href="http://tilde.town/~dan">~dan</a>,
       <a href="http://tilde.town/~vilmibm">vilmibm</a> and others on
       irc were a tremendous help.</p>
-    <p>My bit of code generates a link to a tilde.town user and a
+    <p>At present, my bit of code generates 3 links link to a tilde.town user and a
       random link to another tilde box.  It is a flawed implementation
       and very bare-bones. Here is a list of its shortcomings:
       <ul>
-        <li>It links jQuery. It links through the Google CDN so, I've
-          been given to understand, it's probably already cached by
-          browsers. But it should be reduced to vanilla
-          JavaScript</li>
-        <li>It consists of two text links: no graphics no
+        <li>It consists of three text links: no graphics no
         nothing.</li>
-        <li>It creates random links to tilde.town users. It's not
-          ring-like since there's no opt-in and, as of now, only one
-          other page has a similar gadget on their page,
-          <a href="http://tilde.town/~nick">~nick</a>. (as <a href="http://tilde.town/~dan">~dan</a>
-          pointed on irc).</li>
-        <li>I hope this will eventually be a universal html widget
-          that can be dropped into a ~users page on any known box in
+        <li>We need a "join" page</li>
+        <li>This could eventually be developed into a universal html widget
+          that could be dropped into a ~users page on any known box in
           the tildeverse, and it will generate links to their
           neighbors and to other boxes. It doesn't do this yet. ~dan
           and I have been talking.</li></ul>
     </p>
-  
+    <p><a href="http://tilde.town/~nick">~nick</a> also has
+      <a href="http://tilde.town/~nick/explore.html">an
+      implementation</a> of a random link generator for tilde.town
+      users. 
+    </p>
 
-<h2>ToDos</h2>
-<ol>
-  <li>Figure out a way to manage my site.</li>
-  <li> <blockquote>
+  
+<h3>Generated a (flawed) list of the programming language packages available on
+  the tilde.town box</h3>
+<p><a href="http://tilde.town/~um/languages_on_system.txt">The results.</a></p>
+<p><a href="http://tilde.club/~ford/">~ford</a> posed the following
+  challenge on his tilde.club blog:</p> 
+  <blockquote>
       <p>If you are young and new to Linux and looking for an
         assignment &#8230; go find every programming language on this
         system and learn about each one of them. &#8230; Maybe write a
@@ -102,7 +110,21 @@
         system&#8217;s own information to write it for
         you. (<a href="http://tilde.club/~ford/">~ford</a>, October
         24, 2014).</p>
-  </blockquote></li>
+  </blockquote>
+    <p>I am a bit too old to be young, but I am new to linux, and I gave it
+      a go. I accomplished the task with
+      some <a href="https://github.com/aBathologist/-um/blob/master/projects/languages_on_system/find_languages.prolog">Prolog
+        code</a> that pipes in the output of <code>dpkg -l</code> and
+      compares and filters that against a file with a list of 256
+      programming languages copy-pasted
+      from <a href="http://java.dzone.com/articles/big-list-256-programming">here</a>.
+    </p>
+    <p>The code generates several false positives, from languages like
+    Icon, Magic, and Processing.</p>
+
+<h2>ToDos</h2>
+<ol>
+  <li>Figure out a way to manage my site.</li>
 <li>Lamentations section</li>
       <li>Implement site structure:
         <ul>

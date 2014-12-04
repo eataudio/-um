@@ -1,0 +1,213 @@
+C :
+---- cpp : GNU C preprocessor (cpp)
+---- cpp-4.8 : GNU C preprocessor
+---- discount : implementation of the Markdown markup language in C
+---- g++ : GNU C++ compiler
+---- g++-4.8 : GNU C++ compiler
+---- gcc : GNU C compiler
+---- gcc-4.8 : GNU C compiler
+---- libasprintf0c2:amd64 : GNU library to use fprintf and friends in C++
+---- libboost-program-options1.54.0:am : program options library for C++
+---- libboost-thread1.54.0:amd64 : portable C++ multi-threading
+---- libc-bin : Embedded GNU C Library: Binaries
+---- libc-dev-bin : Embedded GNU C Library: Development binaries
+---- libc6:amd64 : Embedded GNU C Library: Shared libraries
+---- libc6-dev:amd64 : Embedded GNU C Library: Development Libraries and Header Files
+---- libcwidget3 : high-level terminal interface library for C++ (runtime files)
+---- libexpat1:amd64 : XML parsing C library - runtime library
+---- libexpat1-dev:amd64 : XML parsing C library - development kit
+---- libflac8:amd64 : Free Lossless Audio Codec - runtime C library
+---- libgc1c2:amd64 : conservative garbage collector for C and C++
+---- libglib2.0-0:amd64 : GLib library of C routines
+---- libgmpxx4ldbl:amd64 : Multiprecision arithmetic library (C++ bindings)
+---- libmarkdown2:amd64 : implementation of the Markdown markup language in C (library)
+---- libossp-uuid16 : OSSP uuid ISO-C and C++ - shared library
+---- libpcrecpp0:amd64 : Perl 5 Compatible Regular Expression Library - C++ runtime files
+---- libprotobuf8:amd64 : protocol buffers C++ library
+---- libsigc++-2.0-0c2a:amd64 : type-safe Signal Framework for C++ - runtime
+---- libstdc++-4.8-dev:amd64 : GNU Standard C++ Library v3 (development files)
+---- libstdc++6:amd64 : GNU Standard C++ Library v3
+---- libxcb-render0:amd64 : X C Binding, render extension
+---- libxcb-shm0:amd64 : X C Binding, shm extension
+---- libxcb1:amd64 : X C Binding
+
+Augeas :
+---- libaugeas0 : Augeas configuration editing library and API
+---- ruby-augeas : Augeas bindings for the Ruby language
+
+Awk :
+---- gawk : GNU awk, a pattern scanning and processing language
+
+Bash :
+---- bash : GNU Bourne Again SHell
+---- bash-completion : programmable completion for the bash shell
+---- command-not-found : Suggest installation of packages in interactive bash sessions
+
+bc :
+---- bc : GNU bc arbitrary precision calculator language
+
+Curl :
+---- curl : command line tool for transferring data with URL syntax
+
+Haskell :
+---- ghc : The Glasgow Haskell Compilation system
+
+Icon :
+---- hicolor-icon-theme : default fallback theme for FreeDesktop.org icon themes
+
+JavaScript :
+---- javascript-common : Base support for JavaScript library packages
+---- libjs-node-uuid : simple, fast generation of RFC4122 UUIDs - JavaScript library
+---- libv8-3.14-dev : V8 JavaScript engine - development files for 3.14 branch
+---- libv8-3.14.5 : V8 JavaScript engine - runtime library
+---- node-async : higher-order functions and common patterns for asynchronous Javascript
+---- nodejs : evented I/O for V8 javascript
+---- nodejs-dev : evented I/O for V8 javascript (development files)
+
+Lua :
+---- liblua5.1-0:amd64 : Shared library for the Lua interpreter version 5.1
+---- liblua5.2-0:amd64 : Shared library for the Lua interpreter version 5.2
+
+Magic :
+---- file : Determines file type using "magic" numbers
+---- libmagic1:amd64 : File type determination library using "magic" numbers
+
+Perl :
+---- libalgorithm-merge-perl : Perl module for three-way merge of textual data
+---- libapparmor-perl : AppArmor library Perl bindings
+---- libclass-accessor-perl : Perl module that automatically generates accessors
+---- libdpkg-perl : Dpkg perl modules
+---- liberror-perl : Perl module for error/exception handling in an OO-ish way
+---- libfile-fcntllock-perl : Perl module for file locking with fcntl(2)
+---- libio-socket-ssl-perl : Perl module implementing object oriented interface to SSL sockets
+---- liblocale-gettext-perl : module using libc functions for internationalization in Perl
+---- libmailtools-perl : Manipulate email in perl programs
+---- libnet-libidn-perl : Perl bindings for GNU Libidn
+---- libnet-smtp-ssl-perl : Perl module providing SSL support to Net::SMTP
+---- libnet-ssleay-perl : Perl module for Secure Sockets Layer (SSL)
+---- libpcre3:amd64 : Perl 5 Compatible Regular Expression Library - runtime files
+---- libpcre3-dev:amd64 : Perl 5 Compatible Regular Expression Library - development files
+---- libperl5.18 : shared Perl library
+---- libsocket6-perl : Perl extensions for IPv6
+---- libtext-iconv-perl : converts between character sets in Perl
+---- perl : Larry Wall's Practical Extraction and Report Language
+---- perl-base : minimal Perl system
+---- perl-modules : Core Perl modules
+
+PostScript :
+---- ghostscript : interpreter for the PostScript language and for PDF
+---- libgs9 : interpreter for the PostScript language and for PDF - Library
+---- libgs9-common : interpreter for the PostScript language and for PDF - common files
+
+Processing :
+---- at : Delayed job execution and batch processing
+---- libm17n-0 : multilingual text processing library - runtime
+---- libxslt1.1:amd64 : XSLT 1.0 processing library - runtime library
+---- m17n-contrib : multilingual text processing library - contributed database
+---- m17n-db : multilingual text processing library - database
+---- mawk : a pattern scanning and text processing language
+---- ruby-trollop : command-line argument processing library
+
+Prolog :
+---- swi-prolog : ISO/Edinburgh-style Prolog interpreter
+---- swi-prolog-nox : ISO/Edinburgh-style Prolog interpreter (without X support)
+
+Puppet :
+---- puppet : Centralized configuration management - agent startup and compatibility s
+---- puppetmaster-common : Puppet master common scripts
+---- vim-puppet : syntax highlighting for puppet manifests in vim
+
+Python :
+---- dh-python : Debian helper tools for packaging Python libraries and applications
+---- libpython-dev:amd64 : header files and a static library for Python (default)
+---- libpython-stdlib:amd64 : interactive high-level object-oriented language (default python version)
+---- libpython2.7:amd64 : Shared Python runtime library (version 2.7)
+---- libpython2.7-dev:amd64 : Header files and a static library for Python (v2.7)
+---- libpython2.7-minimal:amd64 : Minimal subset of the Python language (version 2.7)
+---- libpython3-dev:amd64 : header files and a static library for Python (default)
+---- libpython3.4:amd64 : Shared Python runtime library (version 3.4)
+---- libpython3.4-dev:amd64 : Header files and a static library for Python (v3.4)
+---- libpython3.4-minimal:amd64 : Minimal subset of the Python language (version 3.4)
+---- python : interactive high-level object-oriented language (default version)
+---- python-apt : Python interface to libapt-pkg
+---- python-apt-common : Python interface to libapt-pkg (locales)
+---- python-cheetah : text-based template engine and Python code generator
+---- python-colorama : Cross-platform colored terminal text in Python - Python 2.x
+---- python-configobj : simple but powerful config file reader and writer for Python
+---- python-debian : Python modules to work with Debian-related data formats
+---- python-dev : header files and a static library for Python (default)
+---- python-distlib : low-level components of python distutils2/packaging
+---- python-gdbm : GNU dbm database support for Python
+---- python-html5lib : HTML parser/tokenizer based on the WHATWG HTML5 specification (Python 2)
+---- python-irclib : IRC client library for Python
+---- python-json-pointer : resolve JSON pointers - python 2.x
+---- python-jsonpatch : library to apply JSON patches - python 2.x
+---- python-minimal : minimal subset of the Python language (default version)
+---- python-oauth : Python library implementing of the OAuth protocol
+---- python-openssl : Python 2 wrapper around the OpenSSL library
+---- python-pam : Python interface to the PAM library
+---- python-pil : Python Imaging Library (Pillow fork)
+---- python-pip : alternative Python package installer
+---- python-pycurl : Python bindings to libcurl
+---- python-requests : elegant and simple HTTP library for Python, built for human beings
+---- python-setuptools : Python Distutils Enhancements (setuptools compatibility)
+---- python-six : Python 2 and 3 compatibility library (Python 2 interface)
+---- python-urllib3 : HTTP library with thread-safe connection pooling for Python
+---- python-virtualenv : Python virtual environment creator
+---- python-xapian : Xapian search engine interface for Python
+---- python-yaml : YAML parser and emitter for Python
+---- python-zope.interface : Interfaces for Python
+---- python2.7-dev : Header files and a static library for Python (v2.7)
+---- python2.7-minimal : Minimal subset of the Python language (version 2.7)
+---- python3-apport : Python 3 library for Apport crash report handling
+---- python3-apt : Python 3 interface to libapt-pkg
+---- python3-bs4 : error-tolerant HTML parser for Python 3
+---- python3-colorama : Cross-platform colored terminal text in Python - Python 3.x
+---- python3-commandnotfound : Python 3 bindings for command-not-found.
+---- python3-dbus : simple interprocess messaging system (Python 3 interface)
+---- python3-dev : header files and a static library for Python (default)
+---- python3-distlib : low-level components of python distutils2/packaging
+---- python3-gdbm:amd64 : GNU dbm database support for Python 3.x
+---- python3-gi : Python 3 bindings for gobject-introspection libraries
+---- python3-html5lib : HTML parser/tokenizer based on the WHATWG HTML5 specification (Python 3)
+---- python3-minimal : minimal subset of the Python language (default python3 version)
+---- python3-pip : alternative Python package installer - Python 3 version of the package
+---- python3-problem-report : Python 3 library to handle problem reports
+---- python3-pycurl : Python 3 bindings to libcurl
+---- python3-six : Python 2 and 3 compatibility library (Python 3 interface)
+---- python3-update-manager : python 3.x module for update-manager
+---- python3.4-dev : Header files and a static library for Python (v3.4)
+---- python3.4-minimal : Minimal subset of the Python language (version 3.4)
+
+Ruby :
+---- libruby1.9.1 : Libraries necessary to run Ruby 1.9.1
+---- node-abbrev : Like ruby abbrev module, but for Node.js
+---- ruby : Interpreter of object-oriented scripting language Ruby (default version)
+---- ruby-dev : Header files for compiling extension modules for Ruby (default version)
+---- ruby-json : JSON library for Ruby
+---- ruby-rgen : Ruby Modelling and Generator Framework
+---- ruby-safe-yaml : safer YAML loader for Ruby
+---- ruby-shadow : interface of shadow password for Ruby
+---- ruby1.9.1 : Interpreter of object-oriented scripting language Ruby
+---- ruby1.9.1-dev : Header files for compiling extension modules for the Ruby 1.9.1
+---- ruby2.0-dev:amd64 : Header files for compiling extension modules for the Ruby 2.0
+
+Scheme :
+---- chicken-bin : Practical and portable Scheme system - compiler
+---- libchicken-dev : Practical and portable Scheme system - development
+---- libchicken6 : Practical and portable Scheme system - runtime
+
+sed :
+---- sed : The GNU sed stream editor
+
+Shell :
+---- busybox-initramfs : Standalone shell setup for initramfs
+---- busybox-static : Standalone rescue shell with tons of builtin utilities
+---- byobu : powerful, text based window manager and shell multiplexer
+---- dash : POSIX-compliant shell
+---- mosh : Mobile shell that supports roaming and intelligent local echo
+---- openssh-client : secure shell (SSH) client, for secure access to remote machines
+---- openssh-server : secure shell (SSH) server, for secure access from remote machines
+---- openssh-sftp-server : secure shell (SSH) sftp server module, for SFTP access from remote machi
+---- whiptail : Displays user-friendly dialog boxes from shell scripts
+

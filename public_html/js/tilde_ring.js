@@ -1,6 +1,9 @@
+// NOTE: this code is in a transitional phase -- 2014-10-04
+// TODO: refactor and update
+
 var tildeboxlist_urls = 'http://tilde.town/~um/json/othertildes.json';
 // var userlist_url = 'http://tilde.town/~dan/users.json';
-var userlist_url = 'http://tilde.town/~um/test.json';
+var userlist_url = 'http://tilde.town/~um/test.json'; // switch back to previous once ~dan updates his code
 
 function link_tilde_ring() {
     link_random_tildebox();
@@ -48,9 +51,7 @@ function link_random_tildebox() {
                    });
 }
 
-// TODO: get tildes to store user JSON in standard location? Then the
-//       `json` arg here could be omitted in lieu of a relative address
-//       hard coded in the function body: e.g., '/users.json'.
+// TODO: get tildes to store user JSON in standard location?
 function link_random_user() {
     // var user_list = document.getElementById('tilde_ring').getAttribute('userlist');
     var user_list = 'http://tilde.town/~um/test.json';
@@ -122,11 +123,11 @@ function remove(array, x) {
 }
 
 // "normalizing" for a random user means eliminating users who haven't
-// edited their pages and removing the user who owns the current page
+// edited their pages
 function normalize_for_random_user(users) {
     return users.filter(function(u) {return u.edited;});
 }
 
-// main function, to run when script loads.
-if (document.getElementById('tilde_town_ring')) {add_event_listeners();};
+// main functions, run when script loads.
+if (document.getElementById('tilde_town_ring')) {add_event_listeners();}; // the conditional is a stop-gap to protect non-updated code
 link_tilde_ring();

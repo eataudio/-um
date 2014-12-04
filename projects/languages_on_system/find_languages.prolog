@@ -52,7 +52,7 @@ write_language_packages(LangPacks, File) :-
 
 /* FETCHING INFORMATION FROM THE SYSTEM */
 
-%% pipes input from bash
+%% pipes in data from unix shell
 %
 %   (The arrow syntax is supplied by my module 'composer'. It is similar to function position.)
 %   

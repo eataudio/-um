@@ -2,13 +2,22 @@
                 library(lambda)
               ]).
 
-% This program takes a file with strings sepparated by lines and pipes
-% in the package information from Ubuntu systems.
-% It writes out a list of packages which contain the strings from the
-% first file, grouped under each respective string.
+% NOTE:
+%
+%   1.  This is a flawed toy. It reports some false positives (becase, of langauges)
+%       like Icon that have words appearing in other contexts. It's an exercise piece.
+%
+%   2.  I have made some edits to this file since the last time I tested it on a run.
+%       That might have broken it.
 
-% NOTE: I have made some edits to this file since the last time I tested it on a run.
-% That might have broken it.
+
+%% Description of program
+%
+%   This program takes a file with strings sepparated by lines and pipes
+%   in the package information from Ubuntu systems.
+%   
+%   It writes out a list of packages which contain the strings from the
+%   first file, grouped under each respective string.
 
 main :-
     language_packages(Packages),

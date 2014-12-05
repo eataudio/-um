@@ -1,9 +1,17 @@
-// NOTE: this code is in a transitional phase -- 2014-10-04
-// TODO: refactor and update
-
+// This code is totally beta
+//
+//  written by ~um@tilde.town (@shon_feder)
+//  with lots of help form ~dan, ~karlen, ~datagrok, ~nick, ~vilmibm
+//  and tilde.town in general.
+ 
 var tildeboxlist_urls = 'http://tilde.town/~um/json/othertildes.json';
-// var userlist_url = 'http://tilde.town/~dan/users.json';
-var userlist_url = 'http://tilde.town/~um/test.json'; // switch back to previous once ~dan updates his code
+var userlist_url = 'http://tilde.town/~dan/users.json';
+
+// main functions, run when script loads.
+window.onload = function() {
+    add_event_listeners(); 
+    link_tilde_ring();
+};
 
 function link_tilde_ring() {
     link_random_tildebox();
@@ -11,12 +19,10 @@ function link_tilde_ring() {
 }
 
 function add_event_listeners() {
-    var ring_link = document.getElementById('tilde_town_ring'),
-        rand_user_link = document.getElementById('random_user'),
+    var ring_link      = document.getElementById('tilde_town_ring'),
         rand_box_link  = document.getElementById('random_tildebox');
 
     ring_link.addEventListener('click', link_tilde_ring);
-    rand_user_link.addEventListener('click', link_tilde_ring);
     rand_box_link.addEventListener('click', link_tilde_ring);
 }
 
@@ -52,48 +58,23 @@ function link_random_tildebox() {
 }
 
 // TODO: get tildes to store user JSON in standard location?
-function link_random_user() {
-    // var user_list = document.getElementById('tilde_ring').getAttribute('userlist');
-    var user_list = 'http://tilde.town/~um/test.json';
-
-    fetchJSONFile( user_list,
+function link_random_user() { 
+    fetchJSONFile( userlist_url,
                    function(users) {
                        delete users[user()];
-                       var user_props   = normalize_for_random_user(obj_values(users)),
-                           urls = user_props.map(function(o) { return o.homepage; });
-
-                       document.getElementById('random_user').href = random_item(urls);
-                       
-                       // generates and attaches link to a tilde.town ring member
-                       // should be cut out into its own function once it won't break anything
-                       // for the current user (~karlen) to do so
-                       var ring_members = user_props.filter(function(x){ return x.ringmember; }),
-                           member_urls  = ring_members.map(function(o) { return o.homepage; }),
+                       var urls   = normalize_for_random_user(obj_values(users)),
                            tilde_ring_link = document.getElementById('tilde_town_ring');
+
+                       console.log("other ~ring members: ");
+                       console.log(urls);
                        
-                       if (tilde_ring_link) {tilde_ring_link.href = random_item(member_urls);};
-                       
+                       tilde_ring_link.href = random_item(urls);
                    });
 }
 
-// Object {key:values} -> Array [values]
-function obj_values(obj) {
-    var values = [];
-    for(var key in obj) {
-        if (obj.hasOwnProperty(key)) {
-            values.push(obj[key]);
-        }
-    }
-    return values;
-}
-
-function random_item(items) {
-    return items[Math.floor(Math.random()*items.length)];
-}
 
 // "normalizing" tilde urls means removing traling slashes and
 // removing the host from the array
-
 function normalize_tilde_urls(urls) {
     urls.push('http://tilde.club');     // compensating for tilde.club's club-centricism ;)
 
@@ -114,6 +95,19 @@ function normalize_tilde_urls(urls) {
     return remove(trimmed_urls, host_tildebox);
 }
 
+// "normalizing" for a random user means eliminating users who haven't
+// edited their pages and haven't joined the ring
+// and returning the remainder. 
+function normalize_for_random_user(users) {
+    return users.filter(function(u) {return u.edited && u.ringmember;})
+                .map(function(o) { return o.homepage; });
+
+    // ring_members = user_props.filter(function(x){ return ; }),
+    // member_urls  = ring_members.,
+
+}
+
+
 function remove(array, x) {
     var index = array.indexOf(x);
     if ( index > -1 ) {
@@ -122,12 +116,18 @@ function remove(array, x) {
     return array;
 }
 
-// "normalizing" for a random user means eliminating users who haven't
-// edited their pages
-function normalize_for_random_user(users) {
-    return users.filter(function(u) {return u.edited;});
+
+function random_item(items) {
+    return items[Math.floor(Math.random()*items.length)];
 }
 
-// main functions, run when script loads.
-if (document.getElementById('tilde_town_ring')) {add_event_listeners();}; // the conditional is a stop-gap to protect non-updated code
-link_tilde_ring();
+// Object {key:values} -> Array [values]
+function obj_values(obj) {
+    var values = [];
+    for(var key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            values.push(obj[key]);
+        }
+    }
+    return values;
+}

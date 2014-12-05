@@ -9,12 +9,15 @@ It is here partially as a backup, and partially so I can share whatever
 javascript and reusable html it contains. At the moment, there are two
 items which might be of interest to other tilde.town users:
 
-1. An [HTML snippet](https://github.com/aBathologist/-um/blob/master/public_html/tilde_ring/tilde_ring.html) that can be dropped into tilde.town sites 
-to generate random links to to other tilde.town sites and to 
-other tilde boxes.
-2. The [JavaScript](https://github.com/aBathologist/-um/blob/master/public_html/js/tilde_ring.js) that facilitates 1, which someone might want to reuse or improve.
+1. The [HTML snippet](https://github.com/aBathologist/-um/blob/master/public_html/tilde_ring/tilde_ring.html)
+for the tilde.town ~ring I made with [~dan](http://tilde.town/~dan/)
+(and lots of other help).
 
-This linker (not yet an implementation of a web ring) is in an
-initial stage and wants many improvements. The list of their 
-problems, planned improvements, a better alternative for the moment,
-etc. can be found [here](http://tilde.town/~um/todos_and_tadas.html).
+2. The
+   [JavaScript](https://github.com/aBathologist/-um/blob/master/public_html/js/tilde_ring.js)
+   that facilitates 1.
+   
+This ring stuff is in its initial stage. Recommendations, critiques, and pull
+requests welcome.
+
+~um

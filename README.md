@@ -9,7 +9,7 @@ It is here partially as a backup, and partially so I can share whatever
 javascript and reusable html it contains. At the moment, there are two
 items which might be of interest to other tilde.town users:
 
-1. An [HTML snippet](https://github.com/aBathologist/-um/blob/master/public_html/tilde_ring.html) that can be dropped into tilde.town sites 
+1. An [HTML snippet](https://github.com/aBathologist/-um/blob/master/public_html/tilde_ring/tilde_ring.html) that can be dropped into tilde.town sites 
 to generate random links to to other tilde.town sites and to 
 other tilde boxes.
 2. The [JavaScript](https://github.com/aBathologist/-um/blob/master/public_html/js/tilde_ring.js) that facilitates 1, which someone might want to reuse or improve.
